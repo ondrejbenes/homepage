@@ -35,7 +35,7 @@
                </ul>
             </div>
          </nav>
-		 </div>
+      </div>
       <div class="container py-1">
          <div class="card text-white bg-dark">
             <div class="card-header">
@@ -54,7 +54,7 @@
                <p class="card-text">Proin mattis lacinia justo. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nulla accumsan, elit sit amet varius semper, nulla mauris mollis quam, tempor suscipit diam nulla vel leo. Aliquam ante. In dapibus augue non sapien. Curabitur bibendum justo non orci. Nulla est. Phasellus rhoncus.</p>
             </div>
          </div>
-		 </div>
+      </div>
       <div class="container">
          <div class="card-deck align-items-start">
             <div class="card text-white bg-dark">
@@ -111,7 +111,7 @@
                <div id="accordion-Work">
                   <div class="card m-0 bg-dark">
                      <div class="card-header clickable" id="headingOneWork" data-toggle="collapse" data-target="#collapseOneWork" aria-expanded="true" aria-controls="collapseOneWork">
-                        <h5>Python backend developer</h5>
+                        <h5>Python Backend Developer</h5>
                      </div>
                      <div id="collapseOneWork" class="collapse" aria-labelledby="headingOneWork" data-parent="#accordion-Work">
                         <div class="card-body">
@@ -121,7 +121,7 @@
                   </div>
                   <div class="card m-0 bg-dark">
                      <div class="card-header clickable" id="headingTwoWork" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwoWork" aria-expanded="false" aria-controls="collapseTwoWork">
-                        <h5>Java developer</h5>
+                        <h5>Java Developer</h5>
                      </div>
                      <div id="collapseTwoWork" class="collapse" aria-labelledby="headingTwoWork" data-parent="#accordion-Work">
                         <div class="card-body">
@@ -213,6 +213,27 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Další</span>
             </a>
+         </div>
+      </div>
+      <div class="container">
+      <div class="card text-white bg-dark">
+         <div class="card-header">
+            <h5>Napište mi</h5>
+         </div>
+         <div class="card-body">
+            <form method="POST" action="/send-email">
+               <div>{{ form.email.label }}: {{ form.email() }}</div>
+               <div>{{ form.name.label }}: {{ form.name() }}</div>
+               <div>{{ form.message.label }}: {{ form.message() }}</div>
+               <div><input class="btn btn-light" type="submit" value="Odeslat email"></div>
+            </form>
+         </div>
+         <div class="card-footer">
+            <div>
+			   <a href="#" class="text-white px-1"><i class="fab fa-linkedin fa-2x"></i></a>
+               <a href="#" class="text-white"><i class="fab fa-github-square fa-2x"></i></a>
+			   <span class="text-dark" style="padding-left: 150px">O + E = ❤</span>
+            </div>
          </div>
       </div>
       <!-- Optional JavaScript -->
