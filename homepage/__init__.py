@@ -20,3 +20,4 @@ db = SQLAlchemy(app)
 # Importing at the end of file is ugly, but necessary
 # http://flask.pocoo.org/docs/0.12/patterns/packages/
 import homepage.views
+import homepage.models
