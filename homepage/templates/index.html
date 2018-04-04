@@ -13,6 +13,9 @@
       <!-- Custom styles -->
       <link rel="stylesheet" type="text/css" href="../static/css/style.css">
       <title>Ondřej Beneš</title>
+
+      <!-- Google's reCaptcha 2-->
+      <script src='https://www.google.com/recaptcha/api.js'></script>
    </head>
    <body>
       <div class="container">
@@ -216,31 +219,33 @@
          </div>
       </div>
       <div class="container">
-      <div class="card text-white bg-dark">
-         <div class="card-header">
-            <h5>Napište mi</h5>
+         <div class="card text-white bg-dark">
+            <div class="card-header">
+               <h5>Napište mi</h5>
+            </div>
+            <div class="card-body">
+               <form method="POST" action="/handle-email">
+                  <div class="form-group">{{ form.email.label }}: {{ form.email(class_="col-md-6 col-sm-8 col-xs-12 form-control") }}</div>
+                  <div class="form-group">{{ form.name.label }}: {{ form.name(class_="col-md-6 col-sm-8 col-xs-12 form-control") }}</div>
+                  <div class="form-group">{{ form.message.label }}: {{ form.message(class_="form-control") }}</div>
+                  <div class="g-recaptcha pb-3" data-sitekey="6LedlU8UAAAAANY7CyKKaIWVa80QNwYY9z5bylgb"></div>
+                  <div><input class="btn btn-light" type="submit" value="Odeslat"></div>
+               </form>
+            </div>
+            <div class="card-footer">
+               <div>
+                  <a href="#" class="text-white px-1"><i class="fab fa-linkedin fa-2x"></i></a>
+                  <a href="#" class="text-white"><i class="fab fa-github-square fa-2x"></i></a>
+                  <span class="text-dark" style="padding-left: 150px">O + E = ❤</span>
+               </div>
+            </div>
          </div>
-         <div class="card-body">
-            <form method="POST" action="/send-email">
-               <div>{{ form.email.label }}: {{ form.email() }}</div>
-               <div>{{ form.name.label }}: {{ form.name() }}</div>
-               <div>{{ form.message.label }}: {{ form.message() }}</div>
-               <div><input class="btn btn-light" type="submit" value="Odeslat email"></div>
-            </form>
-         </div>
-         <div class="card-footer">
-            <div>
-			   <a href="#" class="text-white px-1"><i class="fab fa-linkedin fa-2x"></i></a>
-               <a href="#" class="text-white"><i class="fab fa-github-square fa-2x"></i></a>
-			   <span class="text-dark" style="padding-left: 150px">O + E = ❤</span>
+         <div class="container">
+            <div class="text-center text-muted mt-4">
+               <p class="small">Web byl uveden v provoz v roce 2018. Běží na platformě <a href="http://heroku.com">Heroku</a> a je postaven na technologiích <a href="http://flask.pocoo.org">Flask</a> a <a href="https://getbootstrap.com/">Bootstrap</a>.</p>
             </div>
          </div>
       </div>
-	  <div class="container">
-	     <div class="text-center text-muted mt-4">
-	        <p class="small">Web byl uveden v provoz v roce 2018. Běží na platformě <a href="http://heroku.com">Heroku</a> a je postaven na technologiích <a href="http://flask.pocoo.org">Flask</a> a <a href="https://getbootstrap.com/">Bootstrap</a>.</p>
-	     </div>
-	  </div>
       <!-- Optional JavaScript -->
       <!-- jQuery first, then Popper.js, then Bootstrap JS -->
       <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
