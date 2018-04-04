@@ -6,3 +6,5 @@
 # MAIL_PASSWORD = ''
 #
 # RECAPTCHA_KEY = ''
+#
+# SQLALCHEMY_DATABASE_URI = ''
