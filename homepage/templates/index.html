@@ -12,55 +12,44 @@
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
       <!-- Custom styles -->
       <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+      <link rel="icon" href="../static/img/favicon.ico">
       <title>Ondřej Beneš</title>
 
       <!-- Google's reCaptcha 2-->
       <script src='https://www.google.com/recaptcha/api.js'></script>
    </head>
    <body>
+     <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark">
       <div class="container">
-         <nav class="navbar navbar-expand-md navbar-dark bg-dark">
             <h4><a class="navbar-brand" href="#">Ondřej Beneš</a></h4>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                <ul class="navbar-nav ml-auto">
-                  <li class="nav-item  active">
-                     <a class="nav-link" href="#">O mně</a>
+                  <li class="nav-item">
+                     <a class="nav-link active" href="#o-mne">O mně</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="#">Portfolio</a>
+                     <a class="nav-link" href="#portfolio">Portfolio</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="#">Kontakt</a>
+                     <a class="nav-link" href="#kontakt">Kontakt</a>
                   </li>
                </ul>
             </div>
-         </nav>
       </div>
-      <div class="container py-1">
-         <div class="card text-white bg-dark">
-            <div class="card-header">
-               <div id="carouselHeader" class="carousel slide vert" data-ride="carousel" data-pause="false">
-                  <div class="carousel-inner" role="listbox">
-                     <div class="carousel-item active px-2">
-                        <h5>Python Developer</h5>
-                     </div>
-                     <div class="carousel-item px-2">
-                        <h5>C++ Developer</h5>
-                     </div>
-                  </div>
-               </div>
-            </div>
+     </nav>
+      <div class="container mt-2">
+         <div class="card text-white bg-dark" id="o-mne">
             <div class="card-body">
-               <p class="card-text">Proin mattis lacinia justo. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nulla accumsan, elit sit amet varius semper, nulla mauris mollis quam, tempor suscipit diam nulla vel leo. Aliquam ante. In dapibus augue non sapien. Curabitur bibendum justo non orci. Nulla est. Phasellus rhoncus.</p>
+               <p class="card-text">Python a C++ vývojář, působící ve společnosti Mergado Technologies.</p>
             </div>
          </div>
       </div>
-      <div class="container">
+      <div class="container mt-2">
          <div class="card-deck align-items-start">
-            <div class="card text-white bg-dark">
+            <div class="card text-white bg-dark w-100 d-sm-inline d-block">
                <div class="card-body">
                   <div class="text-center">
                      <i class="fa fa-university fa-4x"></i>
@@ -102,7 +91,8 @@
                   </div>
                </div>
             </div>
-            <div class="card text-white bg-dark">
+             <div class="w-100 d-block d-lg-none pt-1"></div>
+            <div class="card text-white bg-dark w-100 d-sm-inline d-block">
                <div class="card-body">
                   <div class="text-center">
                      <i class="far fa-handshake fa-4x"></i>
@@ -134,7 +124,8 @@
                   </div>
                </div>
             </div>
-            <div class="card text-white bg-dark">
+            <div class="w-100 d-block d-lg-none pt-1"></div>
+            <div class="card text-white bg-dark w-100 d-sm-inline d-block">
                <div class="card-body">
                   <div class="text-center">
                      <i class="fas fa-bicycle fa-4x"></i>
@@ -178,12 +169,12 @@
             </div>
          </div>
       </div>
-      <div class="container py-1">
-         <div id="carouselPortfolio" class="carousel slide" data-ride="carousel">
+      <div class="container mt-2">
+         <div id="portfolio" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
-               <li data-target="#carouselPortfolio" data-slide-to="0" class="active"></li>
-               <li data-target="#carouselPortfolio" data-slide-to="1"></li>
-               <li data-target="#carouselPortfolio" data-slide-to="2"></li>
+               <li data-target="#portfolio" data-slide-to="0" class="active"></li>
+               <li data-target="#portfolio" data-slide-to="1"></li>
+               <li data-target="#portfolio" data-slide-to="2"></li>
             </ol>
             <div class="carousel-inner">
                <div class="carousel-item active">
@@ -208,7 +199,7 @@
                   </div>
                </div>
             </div>
-            <a class="carousel-control-prev" href="#carouselPortfolio" role="button" data-slide="prev">
+            <a class="carousel-control-prev" href="#portfolio" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Předchozí</span>
             </a>
@@ -218,7 +209,7 @@
             </a>
          </div>
       </div>
-      <div class="container">
+      <div class="container mt-2" id="kontakt">
          <div class="card text-white bg-dark">
             <div class="card-header">
                <h5>Napište mi</h5>
@@ -248,8 +239,10 @@
       </div>
       <!-- Optional JavaScript -->
       <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+      <script src="../static/js/main.js"></script>
    </body>
 </html>
