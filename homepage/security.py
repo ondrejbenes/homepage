@@ -19,3 +19,5 @@ def verify_captcha():
         raise ValueError('Captcha validation unsuccessful')
 
 # TODO Tracking
+# http://hangar.runway7.net/python/decorators-and-wrappers
+# http://ip-api.com/docs/api:json
