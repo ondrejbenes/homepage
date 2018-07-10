@@ -2,11 +2,12 @@ from flask import render_template, redirect, url_for
 
 from . import app, mail
 from .mailing import compose_message
-from .security import verify_captcha
+from .security import verify_captcha, track
 from .forms import SendEmailForm
 
 
 @app.route('/')
+@track
 def index():
     return render_template('index.html', form=SendEmailForm())
 
