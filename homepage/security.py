@@ -1,3 +1,4 @@
+import logging
 from functools import wraps
 from datetime import datetime
 
@@ -40,9 +41,12 @@ def track(view):
                              lon=response['lon'],
                              timezone=response['timezone'],
                              datetime=datetime.now())
+        else:
+            logging.warning('Failed to get IP info.')
+            ip_info = IpInfo(datetime=datetime.now())
 
-            db.session().add(ip_info)
-            db.session().commit()
+        db.session().add(ip_info)
+        db.session().commit()
 
         return view(*args, **kwargs)
 
