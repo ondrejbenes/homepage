@@ -6,12 +6,7 @@ __all__ = ('app', 'db', 'mail')
 
 app = Flask(__name__, instance_relative_config=True)
 
-app.config.from_object('config.default')
-
-# Load the configuration from the instance folder
-app.config.from_pyfile('config.py')
-
-app.config.from_envvar('APP_CONFIG_FILE')
+app.config.from_object('homepage.config')
 
 mail = Mail(app)
 
