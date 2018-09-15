@@ -42,7 +42,7 @@ def track(view):
                              timezone=response['timezone'],
                              datetime=datetime.now())
         else:
-            logging.warning('Failed to get IP info.')
+            logging.warning(f'Failed to get IP info.\n{response}')
             ip_info = IpInfo(datetime=datetime.now())
 
         db.session().add(ip_info)
