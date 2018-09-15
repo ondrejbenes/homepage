@@ -30,7 +30,12 @@ def track(view):
     def log_ip(*args, **kwargs):
         """ Loads request's IP, gets GEO data and stores it in DB. """
 
-        url = GEOLOCATION_API_URL.format(request.remote_addr)
+        if request.headers.getlist("X-Forwarded-For"):
+            ip = request.headers.getlist("X-Forwarded-For")[0]
+        else:
+            ip = request.remote_addr
+
+        url = GEOLOCATION_API_URL.format(ip)
         response = requests.get(url).json()
 
         if response['status'] == 'success':
