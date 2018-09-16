@@ -1,9 +1,10 @@
 from flask import render_template, redirect, url_for
 
-from . import app, mail
-from .mailing import compose_message
-from .security import verify_captcha, track
+from .models import IpInfo
 from .forms import SendEmailForm
+from .mailing import compose_message
+from . import app, db, mail, basic_auth
+from .security import verify_captcha, track
 
 
 @app.route('/')
@@ -22,3 +23,15 @@ def handle_email():
     mail.send(compose_message())
 
     return redirect(url_for('index'))
+
+
+@app.route('/traffic')
+@basic_auth.required
+def traffic():
+    results = db.session \
+        .query(IpInfo.city, db.func.count(IpInfo.id).label('count')) \
+        .group_by(IpInfo.city) \
+        .order_by('count desc') \
+        .all()
+
+    return render_template('traffic.html', results=results)
