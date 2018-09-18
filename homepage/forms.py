@@ -2,8 +2,11 @@ from wtforms import Form, StringField, TextAreaField
 from wtforms.validators import DataRequired, Email
 
 
-# TODO Validators
 class SendEmailForm(Form):
-    email = StringField(u'Váš email', validators=[DataRequired(), Email()])
-    name  = StringField(u'Vaše jméno', validators=[DataRequired()])
-    message  = TextAreaField(u'Zpráva', validators=[DataRequired()])
+    data_required_message = 'Pole musí být vyplněno'
+    email_message = 'Nevalidní email'
+
+    email = StringField(u'Váš email', validators=[DataRequired(message=data_required_message),
+                                                  Email(message=email_message)])
+    name  = StringField(u'Vaše jméno', validators=[DataRequired(message=data_required_message)])
+    message  = TextAreaField(u'Zpráva', validators=[DataRequired(message=data_required_message)])
