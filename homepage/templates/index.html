@@ -16,7 +16,7 @@
       <!-- Google's reCaptcha 2-->
       <script src='https://www.google.com/recaptcha/api.js'></script>
    </head>
-   <body>
+   <body data-spy="scroll" data-target=".navbar" data-offset="75">
      <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark">
       <div class="container">
             <h4><a class="navbar-brand" href="#">Ondřej Beneš</a></h4>
@@ -38,8 +38,10 @@
             </div>
       </div>
      </nav>
+     <div  id="o-mne">
+     <h1 class="section-title">O mně</h1>
       <div class="container mt-2">
-         <div class="card text-white bg-dark" id="o-mne">
+         <div class="card text-white bg-dark">
             <div class="card-body">
                <p class="card-text">Python a C++ vývojář, působící ve společnosti Mergado Technologies.</p>
             </div>
@@ -103,7 +105,7 @@
                      <div class="card-header clickable" id="headingOneWork" data-toggle="collapse" data-target="#collapseOneWork" aria-expanded="true" aria-controls="collapseOneWork">
                         <h5>Python Backend Developer</h5>
                      </div>
-                     <div id="collapseOneWork" class="collapse" aria-labelledby="headingOneWork" data-parent="#accordion-Work">
+                     <div id="collapseOneWork" class="collapse show" aria-labelledby="headingOneWork" data-parent="#accordion-Work">
                         <div class="card-body">
                            <p class="text-justify">Mergado<a href="https://mergado.com"><i class="fas fa-external-link-alt fa-small pl-1"></i></a> je aplikace, díky které e-shopy lépe prodávají produkty na srovnávačích, jako jsou Heureka nebo Zboží. Vylepšujeme inzerci e-shopů na Googlu, Facebooku a spoustě dalších webů. Vše se točí okolo XML, která se v Mergadu upraví podle uživatelem definovaných pravidel. Mergado toho umí ale mnohem víc, například provádí analýzu prodeje.</p>
                            <p class="text-justify">Jako Python vývojář se starám zejména o rozvoj API (postavené na Flasku) a integraci Elasticsearch.
@@ -167,8 +169,11 @@
             </div>
          </div>
       </div>
+        </div>
+     <div  id="portfolio">
+      <h1 class="section-title">Portfolio</h1>
       <div class="container mt-2">
-         <div id="portfolio" class="carousel slide" data-ride="carousel">
+         <div class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                <li data-target="#portfolio" data-slide-to="0" class="active"></li>
                <li data-target="#portfolio" data-slide-to="1"></li>
@@ -216,7 +221,10 @@
             </a>
          </div>
       </div>
-      <div class="container mt-2" id="kontakt">
+        </div>
+     <div id="kontakt">
+      <h1 class="section-title">Kontakt</h1>
+      <div class="container mt-2">
          <div class="card text-white bg-dark">
             <div class="card-header">
                <h5>Napište mi</h5>
@@ -244,6 +252,7 @@
             </div>
          </div>
       </div>
+        </div>
       <!-- Optional JavaScript -->
       <!-- jQuery first, then Popper.js, then Bootstrap JS -->
       <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
