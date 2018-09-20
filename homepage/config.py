@@ -4,13 +4,8 @@ import os
 DEBUG = os.getenv('DEBUG')
 
 # Mailing
-MAIL_SERVER = 'smtp.gmail.com'
-MAIL_PORT = 465
-MAIL_USE_SSL = True
-MAIL_USERNAME = os.getenv('MAIL_USERNAME')
-MAIL_SENDER = os.getenv('MAIL_USERNAME')
-MAIL_RECIPIENTS = os.getenv('MAIL_RECIPIENTS','').split(',')
-MAIL_PASSWORD = os.getenv('MAIL_PASSWORD')
+SENDGRID_API_KEY = os.getenv('SENDGRID_API_KEY')
+MAIL_RECIPIENT = os.getenv('MAIL_RECIPIENT')
 
 # Google's Recaptcha
 RECAPTCHA_KEY = os.getenv('RECAPTCHA_KEY')

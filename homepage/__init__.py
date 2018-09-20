@@ -1,5 +1,5 @@
+import sendgrid
 from flask import Flask
-from flask_mail import Mail
 from flask_basicauth import BasicAuth
 from flask_sqlalchemy import SQLAlchemy
 
@@ -9,7 +9,7 @@ app = Flask(__name__, instance_relative_config=True)
 
 app.config.from_object('homepage.config')
 
-mail = Mail(app)
+sendgrid_client = sendgrid.SendGridAPIClient(apikey=app.config['SENDGRID_API_KEY'])
 
 db = SQLAlchemy(app)
 

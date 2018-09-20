@@ -1,9 +1,11 @@
+import logging
+
 from flask import render_template, request, flash
 
 from .models import IpInfo
+from .mailing import send_email
 from .forms import SendEmailForm
-from .mailing import compose_message
-from . import app, db, mail, basic_auth
+from . import app, db, basic_auth
 from .security import captcha_verified, track
 
 
@@ -20,9 +22,14 @@ def index():
         flash('Prosím potvrďte, že nejste robot.', 'alert-danger')
 
     if verified and form.validate():
-        mail.send(compose_message())
-        flash('Mail odeslán', 'alert-success')
-        form = SendEmailForm()
+        response = send_email(form.name.data, form.email.data, form.message.data)
+
+        if response.status_code == 202:
+            flash('Mail odeslán', 'alert-success')
+            form = SendEmailForm()
+        else:
+            logging.error(response.body)
+            flash('Email se nepodařilo odeslat.', 'alert-danger')
 
     return render_template('index.html', form=form, anchor='kontakt')
 
