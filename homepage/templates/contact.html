@@ -1,0 +1,39 @@
+{% from "_formhelpers.html" import render_field %}
+<div id="kontakt">
+  <h1 class="section-title">Kontakt</h1>
+  <div class="container mt-2">
+     {% with messages = get_flashed_messages(with_categories=true) %}
+       {% if messages %}
+         {% for category, message in messages %}
+           <div class="alert {{ category }} alert-dismissible fade show" role="alert">
+             {{ message }}
+             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+             </button>
+           </div>
+         {% endfor %}
+       {% endif %}
+     {% endwith %}
+     <div class="card text-white bg-dark">
+        <div class="card-header">
+           <h5>Napište mi</h5>
+        </div>
+        <div class="card-body">
+           <form method="POST" action="/">
+               {{ render_field(form.email, class="col-md-6 col-sm-8 col-xs-12 form-control") }}
+               {{ render_field(form.name, class="col-md-6 col-sm-8 col-xs-12 form-control") }}
+               {{ render_field(form.message, class="form-control") }}
+              <div class="g-recaptcha pb-3" data-sitekey="6LedlU8UAAAAANY7CyKKaIWVa80QNwYY9z5bylgb"></div>
+              <div><input class="btn btn-light" type="submit" value="Odeslat"></div>
+           </form>
+        </div>
+        <div class="card-footer">
+           <div>
+              <a href="https://www.linkedin.com/in/ond%C5%99ej-bene%C5%A1-6155b2125/" class="text-white px-1"><i class="fab fa-linkedin fa-2x"></i></a>
+              <a href="https://github.com/ondrejbenes?tab=repositories" class="text-white"><i class="fab fa-github-square fa-2x"></i></a>
+              <span class="text-dark" style="padding-left: 150px">O + E = ❤</span>
+           </div>
+        </div>
+     </div>
+  </div>
+</div>
