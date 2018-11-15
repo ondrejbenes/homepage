@@ -31,3 +31,9 @@ body {
     text-decoration: overline;
     font-variant: small-caps;
 }
+
+@media screen and (max-width: 455px){
+    #rc-imageselect, .g-recaptcha {
+        transform:scale(0.71); -webkit-transform:scale(0.71); transform-origin:0 0; -webkit-transform-origin:0 0;
+    }
+}
