@@ -24,11 +24,10 @@ body {
 }
 
 .section-title {
-    font-size: 2em;
+    font-size: 3em;
     text-align: center;
-    padding-top: 2em;
-    padding-bottom: 1em;
-    text-decoration: overline;
+    padding-top: 1em;
+    padding-bottom: 0.25em;
     font-variant: small-caps;
 }
 
@@ -37,3 +36,8 @@ body {
         transform:scale(0.71); -webkit-transform:scale(0.71); transform-origin:0 0; -webkit-transform-origin:0 0;
     }
 }
+
+.carousel-item img {
+    -webkit-filter: blur(0.75px); /* Safari 6.0 - 9.0 */
+    filter: blur(.75px);
+  }
